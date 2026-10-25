@@ -100,7 +100,7 @@ export const appRouter = router({
         await stripe.checkout.sessions.create({
           success_url: billingUrl,
           cancel_url: billingUrl,
-          payment_method_types: ['card'],
+          allowed_payment_method_types: ['card'],
           mode: 'subscription',
           billing_address_collection: 'auto',
           line_items: [
